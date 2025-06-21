@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MITS - Internship Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* glowing effect for banner */
+    .glow {
+      box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-sky-100 via-blue-50 to-emerald-100 min-h-screen font-sans relative">
+
+  <!-- Sticky Apply Banner -->
+  <div class="sticky top-4 left-4 z-50 w-max bg-yellow-400 px-6 py-3 rounded-full text-black font-bold text-sm glow shadow-md">
+    <a href="#internship" class="flex items-center gap-2">
+      🚀 Apply for Internship
+    </a>
+  </div>
+
+  <!-- Hamburger Menu Button (Mobile) -->
+  <button id="menu-btn" aria-label="Open Sidebar Menu"
+    class="fixed top-4 right-4 z-50 md:hidden p-2 rounded bg-blue-800 text-white shadow-md hover:bg-blue-900 transition">
+    ☰ Menu
+  </button>
+
+  <!-- Sidebar -->
+  <aside id="sidebar"
+    class="fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-blue-900 to-indigo-800 text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
+    <nav class="p-6 space-y-5">
+      <h2 class="text-xl font-semibold border-b border-white pb-2">📘 Navigation</h2>
+      <ul class="space-y-4">
+        <li><a href="#internship" class="block hover:pl-2 transition-all duration-200">📄 Internship Application</a></li>
+        <li><a href="#offer" class="block hover:pl-2 transition-all duration-200">📃 Offer Letter</a></li>
+        <li><a href="#verify" class="block hover:pl-2 transition-all duration-200">🎓 Certificate Verification</a></li>
+        <li><a href="#team" class="block hover:pl-2 transition-all duration-200">🤝 Join Team</a></li>
+        <li><a href="#contact" class="block hover:pl-2 transition-all duration-200">📞 Contact Info</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="p-6 md:ml-0 mt-20">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4 text-gray-800">Welcome to <span class="text-blue-600">MITS</span></h1>
+      <p class="mb-6 text-lg text-gray-600">Explore learning, real-world projects, and internship opportunities tailored for students.</p>
+
+      <!-- Dummy Sections -->
+      <section id="internship" class="mb-10 bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold mb-2 text-blue-800">📄 Internship Application</h2>
+        <p>Apply for hands-on internships in your field of interest.</p>
+      </section>
+
+      <section id="offer" class="mb-10 bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold mb-2 text-blue-800">📃 Offer Letter</h2>
+        <p>Get instant offer letters once your application is accepted.</p>
+      </section>
+
+      <section id="verify" class="mb-10 bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold mb-2 text-blue-800">🎓 Certificate Verification</h2>
+        <p>Validate your internship certificate quickly using this section.</p>
+      </section>
+
+      <section id="team" class="mb-10 bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold mb-2 text-blue-800">🤝 Join Our Team</h2>
+        <p>Interested in contributing? Join the MITS Team.</p>
+      </section>
+
+      <section id="contact" class="mb-10 bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-2xl font-semibold mb-2 text-blue-800">📞 Contact Info</h2>
+        <p>Reach out to us through email, phone, or social media.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.getElementById('sidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+
+    // Optional: close sidebar on outside click
+    window.addEventListener('click', function (e) {
+      if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+  </script>
+</body>
+</html>
